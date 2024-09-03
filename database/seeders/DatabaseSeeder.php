@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Department;
+use App\Models\Doctordept;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -189,5 +190,69 @@ class DatabaseSeeder extends Seeder
         $dept = new Department(['name' => 'แผนกบริการสถานที่-รักษาความสะอาด']);
         $dept->save();
 
+        $doctor = new Doctordept(['name' => 'อายุรกรรม']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'ศัลยกรรม']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'สูตินรีเวช']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'กุมารเวช']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'MED']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Anes']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'ARI']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Cardio']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Check up']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Dent']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'ENT']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'ER']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'EYE']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'EYE Lasik']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'GI']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Mind center']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Neuro']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'OBS']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Ortho']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'PED']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Pain Center']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Reheb']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Skin']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Surg']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Surg ประสาท']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Wellness']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'X-ray']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'แพทย์แผนจีน']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'KT']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'DM']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'CCU']);
+        $doctor->save();
+        $doctor = new Doctordept(['name' => 'Chest']);
+        $doctor->save();
     }
 }

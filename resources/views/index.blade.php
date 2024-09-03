@@ -43,10 +43,9 @@
             <label class="block mt-3 mb-1" for="">เลือกแผนก/สาขา<span class="text-red-500">*</span></label>
             <select id="dept_doctor" name="dept_doctor" class="block w-full p-1 border rounded border-gray-300">
                 <option value="">เลือกสาขา</option>
-                <option value="อายุรกรรม">อายุรกรรม</option>
-                <option value="ศัลยกรรม">ศัลยกรรม</option>
-                <option value="สูตินรีเวช">สูตินรีเวช</option>
-                <option value="กุมารเวช">กุมารเวช</option>
+                @foreach ($doctors as $item)
+                    <option value="{{ $item->name }}">{{ $item->name }}</option>
+                @endforeach
             </select>
             <select id="dept_user" name="dept_user" class="block w-full p-1 border rounded border-gray-300">
                 <option value="">เลือกแผนก</option>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Date;
 use App\Models\Department;
+use App\Models\Doctordept;
 use App\Models\Slot;
 use Illuminate\Http\Request;
 
@@ -39,6 +40,7 @@ class WebController extends Controller
     public function main()
     {
         $depts = Department::orderBy('name', 'asc')->get();
+        $doctors = Doctordept::orderBy('name', 'asc')->get();
         $dates_data = Date::get();
         $data = [];
         foreach ($dates_data as $item) {
@@ -51,7 +53,7 @@ class WebController extends Controller
                 'slot' => $item->slot,
             ];
         }
-        return view('index')->with(compact('depts', 'data'));
+        return view('index')->with(compact('depts','doctors', 'data'));
     }
     public function saveSlot(Request $request)
     {
