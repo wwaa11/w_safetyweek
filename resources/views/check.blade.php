@@ -61,11 +61,20 @@
                 const res = await axios.post("{{ env('APP_URL') }}" + "/search", formData, {
                     "Content-Type": "multipart/form-data"
                 }).then((res) => {
-                    $('#content').show()
-                    $('#check_name').html(res['data']['name'])
-                    $('#check_dept').html(res['data']['dept'])
-                    $('#check_date').html(res['data']['date'])
-                    $('#check_level').html(res['data']['level'])
+                    if (res['data']['status'] == 2) {
+                        Swal.fire({
+                            title: res['data']['descriptaion'],
+                            icon: 'error',
+                            confirmButtonText: 'ตกลง',
+                            confirmButtonColor: 'red'
+                        })
+                    } else {
+                        $('#content').show()
+                        $('#check_name').html(res['data']['name'])
+                        $('#check_dept').html(res['data']['dept'])
+                        $('#check_date').html(res['data']['date'])
+                        $('#check_level').html(res['data']['level'])
+                    }
                 })
             } else {
                 Swal.fire({

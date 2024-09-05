@@ -53,7 +53,7 @@ class WebController extends Controller
                 'slot' => $item->slot,
             ];
         }
-        return view('index')->with(compact('depts','doctors', 'data'));
+        return view('index')->with(compact('depts', 'doctors', 'data'));
     }
     public function saveSlot(Request $request)
     {

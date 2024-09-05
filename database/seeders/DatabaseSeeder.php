@@ -2,15 +2,40 @@
 
 namespace Database\Seeders;
 
+use App\Models\Date;
 use App\Models\Department;
 use App\Models\Doctordept;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        $round = 1;
+        $slots = [
+            "9:00 - 10:30",
+            "10:30 - 12:0",
+            "13:30 - 15:00",
+            "15:00 - 16:30",
+        ];
+
+        $dateStart = date_create('2024-09-30');
+        $dateEnd = date_create('2024-10-04');
+        $diff = date_diff($dateStart, $dateEnd);
+        for ($i = 1; $i <= $diff->days + 1; $i++) {
+            $date = date_format($dateStart, "Y-m-d");
+            foreach ($slots as $slot) {
+                $new_date = new Date;
+                $new_date->date = $date;
+                $new_date->date_string = strtotime($date);
+                $new_date->time = $slot;
+                $new_date->round = $round;
+                $new_date->save();
+                $round = $round + 1;
+            }
+            $dateStart = date_add($dateStart, date_interval_create_from_date_string("1 days"));
+        }
+
         $dept = new Department(['name' => 'แผนกเครื่องมือแพทย์']);
         $dept->save();
         $dept = new Department(['name' => 'แผนกโภชนาการ']);

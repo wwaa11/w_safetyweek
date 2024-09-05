@@ -142,6 +142,10 @@
             select = id
         }
 
+        function containsOnlyDigits(str) {
+            return /^\d+$/.test(str);
+        }
+
         async function submit() {
             $('#wating').show()
             $('#submiting').hide()
@@ -167,6 +171,9 @@
                 check = false
             }
             if (select == null) {
+                check = false
+            }
+            if (type == 'พนักงาน Full time' && containsOnlyDigits(userid) == false) {
                 check = false
             }
             if (check) {
